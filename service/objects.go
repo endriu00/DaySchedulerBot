@@ -1,5 +1,9 @@
 package service
 
+import (
+	"time"
+)
+
 /*
 Update type is the type mirroring the concept of the request
 Telegram servers send to the webhook.
@@ -31,4 +35,9 @@ In other words, it identifies the user the bot is talking to.
 */
 type Chat struct {
 	Id int `json:"id"`
+}
+
+type Event struct {
+	TimeScheduled time.Time
+	Description   string
 }

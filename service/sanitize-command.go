@@ -6,7 +6,7 @@ import (
 )
 
 /*SanityzeCommand provides a fast way to extract the command from a string*/
-func SanityzeCommand(text string) string {
+func SanitizeCommand(text string) string {
 	var stringScan scanner.Scanner
 	stringScan.Init(strings.NewReader(text))
 	_ = stringScan.Scan()
