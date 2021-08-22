@@ -32,7 +32,7 @@ func (bot *Bot) ShowEvents(chat Chat, day string) error {
 	//}
 
 	//Create response message
-	var telegramMessage []string
+	telegramMessage := bot.BuildMessage(events)
 
 	telegramApi := bot.telegramApiUrl + bot.telegramBotToken + "/sendMessage"
 	telegramApiURL, err := url.Parse(telegramApi)

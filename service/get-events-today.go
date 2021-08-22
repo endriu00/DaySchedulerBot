@@ -8,9 +8,8 @@ import (
 func (bot *Bot) GetEventsToday(chat Chat) ([]Event, error) {
 	id := chat.Id
 	var events []Event
-	var err error
 	//Query the DB for user events of today
-	err = bot.db.Select(&events, `SELECT username, time, description 
+	err := bot.db.Select(&events, `SELECT username, time, description 
 			  FROM event JOIN agenda ON event.username=agenda.username 
 			  AND event.time=agenda.time 
 			  WHERE event.time=CURDATE() AND agenda.chatid=?`, id)

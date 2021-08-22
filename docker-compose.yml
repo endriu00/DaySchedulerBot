@@ -1,0 +1,16 @@
+version: '3'
+
+services: 
+    database:
+        image: mariadb:10.5
+        environment:
+            - MYSQL_ROOT_PASSWORD=root
+            - MYSQL_DATABASE=dayscheduler
+        ports:
+            - 3306:4567
+        volumes:
+            - ./db/:/docker-entrypoint-initdb.d/
+    adminer: 
+        image: adminer:latest
+        ports: 
+            - 7000:8080
