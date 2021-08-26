@@ -20,5 +20,11 @@ CREATE TABLE `agenda` (
     `chatid` bigint(11) NOT NULL,
     `username` varchar(150) NOT NULL,
     `time` datetime NOT NULL,
-    PRIMARY KEY (`chatid`, `username`, `time`)
+    FOREIGN KEY (`chatid`, `username`)
+    REFERENCES `telegram_users`(`chatid`, `username`)
+    ON UPDATE CASCADE ON DELETE CASCADE,
+    FOREIGN KEY (`time`)
+    REFERENCES `event`(`time`)
+    ON UPDATE CASCADE ON DELETE CASCADE
+    ),
 ) ENGINE=InnoDB COMMENT='Agenda for joining tables telegram_users and event';

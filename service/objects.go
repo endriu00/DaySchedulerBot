@@ -24,8 +24,10 @@ type Update struct {
 	  - Chat that is the chat object in which the Message is
 */
 type Message struct {
-	Text string `json:"text"`
-	Chat Chat   `json:"chat"`
+	Text string    `json:"text"`
+	Chat Chat      `json:"chat"`
+	From User      `json:"from"`
+	Date time.Time `json:"date"`
 }
 
 /*
@@ -35,6 +37,11 @@ type Message struct {
 */
 type Chat struct {
 	Id int `json:"id"`
+}
+
+type User struct {
+	Username string `json:"username"`
+	IsBot    bool   `json:"is_bot"`
 }
 
 /*

@@ -8,7 +8,12 @@ func (bot *Bot) HandleTelegramWebhook(r *http.Request) {
 
 	update, err := ParseTelegramRequest(r)
 	if err != nil {
+		bot.log.WithError(err).Error("Cannot parse telegram request.")
 		return
 	}
-	bot.Handler(update)
+	err = bot.Handler(update)
+	if err != nil {
+		bot.log.WithError(err).Error("Handler returned an error.")
+		return
+	}
 }

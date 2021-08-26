@@ -54,6 +54,7 @@ func (bot *Bot) ListenAndServe() error {
 	}()
 	bot.wgchan = append(bot.wgchan, shutdown)
 
+	//bot.HandleTelegramWebhook()
 	// Wait for shutdown signal
 	<-bot.shutdownSignal
 	bot.log.Info("Worker : Stopping scheduled tasks")
