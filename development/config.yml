@@ -1,9 +1,0 @@
-
-logger:
-  level: debug
-  combinedtostdout: true
-telegram: 
-  telegramapiurl: "https://api.telegram.org/bot"
-  telegrambottoken: 1968866540:AAE8ZDEtUcEpwFqqLX9r5N3nrrQhHwwx4t4
-database: 
-  db: "root:root@tcp(127.0.0.1:3306)/dayscheduler?parseTime=true&loc=Europe%2fRome&time_zone=%27Europe%2FRome%27"
