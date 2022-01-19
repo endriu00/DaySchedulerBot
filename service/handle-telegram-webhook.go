@@ -4,7 +4,7 @@ import (
 	"net/http"
 )
 
-func (bot *Bot) HandleTelegramWebhook(r *http.Request) {
+func (bot *Bot) HandleTelegramWebhook(w http.ResponseWriter, r *http.Request) {
 
 	update, err := ParseTelegramRequest(r)
 	if err != nil {
